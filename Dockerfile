@@ -5,3 +5,20 @@ FROM nvidia/cuda:${CUDA_VERSION}-base-ubuntu${UBUNTU_VERSION} AS base
 RUN apt update && apt install -y --no-install-recommends curl
 RUN apt install -y --no-install-recommends python3 python3-pip
 RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr POETRY_VERSION=${POETRY_VERSION} python3 -
+
+RUN pip install jupyter 
+
+# Use wget to grab files of interest to have in the container
+RUN apt-get install -y wget
+
+# A sample notebook to use to confirm Tensorflow works
+RUN wget https://raw.githubusercontent.com/gradient-ai/TensorFlow/main/quick_start_beginner.ipynb
+
+
+# Use EXPOSE to instruct the image to expose ports as needed
+EXPOSE 8888
+
+
+# The main purpose of a CMD is to provide defaults for an executing container
+# This CMD opens the jupyter notebook when you run the image
+CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --ip 0.0.0.0 --no-browser --allow-root"]

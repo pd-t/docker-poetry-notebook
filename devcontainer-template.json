@@ -16,26 +16,6 @@
             "type": "boolean",
             "description": "Upgrade OS packages?",
             "default": "false"
-        },
-        "dockerVersion": {
-            "type": "string",
-            "proposals": [
-                "latest",
-                "none",
-                "20.10"
-            ],
-            "default": "latest",
-            "description": "Select or enter a Docker/Moby CLI version. (Availability can vary by OS version.)"
-        },
-        "moby": {
-            "type": "boolean",
-            "default": "true",
-            "description": "Install OSS Moby build instead of Docker CE"
-        },
-        "enableNonRootDocker": {
-            "type": "boolean",
-            "description": "Enable non-root user to access Docker in container?",
-            "default": "true"
         }
     },
     "platforms": [

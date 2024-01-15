@@ -15,6 +15,9 @@ on:
       - main
     tags:
       - '*'
+    paths:
+      - Dockerfile
+
 
 jobs:
   push_to_registry:

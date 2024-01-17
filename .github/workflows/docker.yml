@@ -37,7 +37,7 @@ jobs:
         id: docker-meta
         uses: docker/metadata-action@v4
         with:
-          images: thomasfraunholz/paperspace-with-poetry
+          images: thomasfraunholz/docker-poetry-notebook
           tags: |
             # branch event
             type=ref,event=branch

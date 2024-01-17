@@ -7,7 +7,7 @@ on:
       - README.md
       - .github/workflows/dockerhub-description.yml
 jobs:
-  dockerHubDescription-paperspace-with-poetry:
+  dockerHubDescription-docker-poetry-notebook:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -16,5 +16,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: thomasfraunholz/paperspace-with-poetry
+        repository: thomasfraunholz/docker-poetry-notebook
         short-description: ${{ github.event.repository.description }}

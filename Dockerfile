@@ -10,7 +10,7 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr POETRY_VERSIO
 # Copy the entrypoint script into the container
 COPY scripts/entrypoint.sh /entrypoint.sh
 COPY README.md poetry.lock pyproject.toml ./
-
+RUN pip install jupyter
 # Give execution rights to the entrypoint script
 RUN chmod +x /entrypoint.sh
 

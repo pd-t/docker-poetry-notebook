@@ -9,10 +9,6 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr POETRY_VERSIO
 
 RUN pip install jupyter
 
-#COPY poetry.lock pyproject.toml ./
-#RUN poetry config virtualenvs.create false
-#RUN poetry install
-
 COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 

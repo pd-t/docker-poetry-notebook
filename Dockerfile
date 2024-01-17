@@ -8,14 +8,9 @@ RUN apt install -y --no-install-recommends python3 python3-pip
 RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr POETRY_VERSION=${POETRY_VERSION} python3 -
 
 # Copy the entrypoint script into the container
-COPY scripts/entrypoint.sh /entrypoint.sh
 COPY README.md poetry.lock pyproject.toml ./
+RUN bash install-dev-tools.sh
 RUN pip install jupyter
-# Give execution rights to the entrypoint script
-RUN chmod +x /entrypoint.sh
-
-# Set the entrypoint script to be executed
-ENTRYPOINT ["/entrypoint.sh"]
 
 # Use EXPOSE to instruct the image to expose ports as needed
 EXPOSE 8888

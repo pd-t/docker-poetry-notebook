@@ -7,7 +7,6 @@ RUN apt install -y --no-install-recommends python3 python3-pip
 
 RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/usr POETRY_VERSION=${POETRY_VERSION} python3 -
 
-# Copy the entrypoint script into the container
 RUN pip install jupyter
 
 COPY scripts/entrypoint.sh /entrypoint.sh

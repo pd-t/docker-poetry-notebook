@@ -1,1 +1,41 @@
-# A lightweight setting for jupyter notebooks.
+# A reproducible poetry setting for jupyter notebooks.
+
+This project is motivated by the desire to establish a Poetry-based setting for Jupyter Notebooks on Paperspace. The core idea is to create a Docker image with CUDA support, enabling the use of Poetry to maintain a reproducible Jupyter kernel environment.
+
+With this setup, users can leverage the power of CUDA for advanced computations while benefiting from Poetry's dependency management to ensure consistency and reproducibility in their Jupyter Notebook projects.
+
+## Repository Overview
+
+The Docker-CUDA-Poetry image is hosted on Docker Hub under the tag 'thomasfraunholz/docker-poetry-notebook'. This repository serves as an essential tool for developers seeking to leverage the power of Poetry in combination with CUDA capabilities within a Docker container.
+
+### Image Tags
+
+The image tags follow the format `thomasfraunholz/docker-poetry-notebook:<poetry_version>-<cuda_version>`. For example, `thomasfraunholz/docker-cuda-poetry:1.6.1-117` indicates that the container uses Poetry version 1.6.1 and CUDA version 117. This naming convention is designed to provide clarity and ease in selecting the appropriate version for your needs.
+
+### Devcontainer Features
+
+The repository includes a development container (devcontainer) with Docker-in-Docker support. This feature allows you to run Docker commands inside your container, providing a more flexible and isolated development environment. Additionally, the devcontainer is configured to automatically pass local SSH keys and gitconfig settings into the container. This integration streamlines the setup process and enhances the convenience of local development.
+
+## Getting Started with Paperspace
+
+This guide will assist you in setting up a Jupyter Notebook environment on Paperspace using a specific Docker container.
+
+### Step-by-Step Instructions:
+
+1. **Selecting the Docker Container**:
+   - When creating a new notebook on Paperspace, navigate to the 'Advanced Options'.
+   - In the 'Name' field, specify the Docker Hub repository along with the desired tag. For example, use `thomasfraunholz/docker-cuda-poetry:1.6.1-117`.
+
+2. **Setting Up the Command**:
+   - It's recommended to clear the 'Command' field and leave it as `jupyter notebook --allow-root --ip=0.0.0.0`.
+   - This setup helps avoid potential issues that might arise from the pre-entered command.
+
+3. **Installing Packages with Poetry**:
+   - If you have already set up Poetry, you can install packages using the command `!poetry install` within your notebook.
+
+4. **Trying Out with a Pre-configured Repository**:
+   - If you want to experiment with Poetry, specify the workspace URL as `https://github.com/pd-t/devcontainer-poetry-template`.
+   - In this repository, navigate to the `notebooks` directory and run the `setup.ipynb`.
+   - This will set up an environment where you can enjoy using PyTorch with CUDA support.
+
+By following these steps, you'll be able to leverage the power of Docker, Poetry, and CUDA support in your Jupyter Notebook projects on Paperspace.

@@ -39,3 +39,11 @@ This guide will assist you in setting up a Jupyter Notebook environment on Paper
    - This will set up an environment where you can enjoy using PyTorch with CUDA support.
 
 By following these steps, you'll be able to leverage the power of Docker, Poetry, and CUDA support in your Jupyter Notebook projects on Paperspace.
+
+## Known Issues
+
+### Poetry Install Command in Entrypoint
+
+Ideally, the command `poetry install` should be executed in the Docker container's entrypoint. However, when this approach is used in Paperspace, it leads to an unexpected behavior where the container stops running after successfully installing the dependencies. The specific reasons for this issue are currently unknown, and unfortunately, access to relevant logging information to diagnose the problem is not available.
+
+This limitation requires users to manually run `poetry install` within the notebook environment, instead of it being automatically executed upon container startup.

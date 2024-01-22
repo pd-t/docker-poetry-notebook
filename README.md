@@ -30,13 +30,10 @@ This guide will assist you in setting up a Jupyter Notebook environment on Paper
    - It's recommended to clear the 'Command' field and leave it as `jupyter notebook --allow-root --ip=0.0.0.0`.
    - This setup helps avoid potential issues that might arise from the pre-entered command.
 
-3. **Installing Packages with Poetry**:
-   - If you have already set up Poetry, you can install packages using the command `!poetry install` within your notebook.
-
 4. **Trying Out with a Pre-configured Repository**:
    - If you want to experiment with Poetry, specify the workspace URL as `https://github.com/pd-t/devcontainer-pytorch-template`.
-   - In this repository, navigate to the `notebooks` directory and run the `setup.ipynb`.
-   - This will set up an environment where you can enjoy using PyTorch with CUDA support.
+   - You can install packages using the command `!poetry install` within your notebook.
+   - Navigate to the `notebooks` directory and run the `check_cuda.ipynb` to check your GPU support.
 
 By following these steps, you'll be able to leverage the power of Docker, Poetry, and CUDA support in your Jupyter Notebook projects on Paperspace.
 

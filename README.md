@@ -10,7 +10,7 @@ The Docker-CUDA-Poetry image is hosted on Docker Hub under the tag 'thomasfraunh
 
 ### Image Tags
 
-The image tags follow the format `thomasfraunholz/docker-poetry-notebook:<poetry_version>-<cuda_version>`. For example, `thomasfraunholz/docker-cuda-poetry:1.6.1-117` indicates that the container uses Poetry version 1.6.1 and CUDA version 117. This naming convention is designed to provide clarity and ease in selecting the appropriate version for your needs.
+The image tags follow the format `thomasfraunholz/docker-poetry-notebook:<poetry_version>-<cuda_version>`. For example, `thomasfraunholz/docker-poetry-notebook:1.6.1-117` indicates that the container uses Poetry version 1.6.1 and CUDA version 117. This naming convention is designed to provide clarity and ease in selecting the appropriate version for your needs.
 
 ### Devcontainer Features
 
@@ -24,7 +24,7 @@ This guide will assist you in setting up a Jupyter Notebook environment on Paper
 
 1. **Selecting the Docker Container**:
    - When creating a new notebook on Paperspace, navigate to the 'Advanced Options'.
-   - In the 'Name' field, specify the Docker Hub repository along with the desired tag. For example, use `thomasfraunholz/docker-cuda-poetry:1.6.1-117`.
+   - In the 'Name' field, specify the Docker Hub repository along with the desired tag. For example, use `thomasfraunholz/docker-poetry-notebook:1.6.1-117`.
 
 2. **Setting Up the Command**:
    - It's recommended to clear the 'Command' field and leave it as `jupyter notebook --allow-root --ip=0.0.0.0`.
